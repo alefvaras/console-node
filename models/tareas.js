@@ -74,37 +74,37 @@ class Tareas {
         if (this._listado[id]) {
             delete this._listado[id];
         }
-
-        toogleCompletadas(ids = []){
-
-            ids.forEach(id => {
-                const tarea = this._listado[id];
-                if (!tarea.completadoEb) {
-                    tarea.completadoEb = new Date().toISOString();
-                }
-
-            })
-
-this.listadoArr.forEach(tarea=>{
-    if(!id.includes(tarea.id)){
-        const tarea= this._listado[tarea.id];
-        tarea.completadoEb=null;
     }
-})
+    toogleCompletadas(ids = []) {
 
-        }
+        ids.forEach(id => {
+            const tarea = this._listado[id];
+            if (!tarea.completadoEb) {
+                tarea.completadoEb = new Date().toISOString();
+            }
 
+        })
+
+        this.listadoArr.forEach(tarea => {
+            if (!id.includes(tarea.id)) {
+                const tarea = this._listado[tarea.id];
+                tarea.completadoEb = null;
+            }
+        })
 
     }
 
-    creatTarea(desc = '') {
-
-        const tarea = new Tarea(desc);
-
-        this._listado[tarea.id] = tarea;
 
 
-    }
+
+creatTarea(desc = '') {
+
+    const tarea = new Tarea(desc);
+
+    this._listado[tarea.id] = tarea;
+
+
+}
 
 }
 
